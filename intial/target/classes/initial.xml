@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.xworkz.intial.components.ClubComponent"
+		id="clubComponent">
+		<constructor-arg value="CountryTrust"></constructor-arg>
+	</bean>
+
+	<bean class="com.xworkz.intial.components.ClubComponent"
+		id="clubComponent1">
+		<constructor-arg value="KormanaglaTrust" />
+		<constructor-arg value="60" />
+	</bean>
+	<bean class="java.lang.String" id="string">
+		<constructor-arg value="Star"></constructor-arg>
+	</bean>
+
+	<bean class="com.xworkz.intial.components.ModemComponent"
+		id="modemComponent">
+		<constructor-arg value="MSR"></constructor-arg>
+	</bean>
+
+	<bean class="com.xworkz.intial.components.ITCProduct"
+		id="iTCProduct">
+		<constructor-arg value="${itcproduct.name}"></constructor-arg>
+		<property name="type" value="cold-drinks"></property>
+		<property name="expiryDate" value="12/04/21"></property>
+	</bean>
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		id="propertyPlaceholderConfigurer">
+	<property name="location" value="app.properties"></property>	
+	</bean>
+</beans>
