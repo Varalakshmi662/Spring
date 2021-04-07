@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean
+		class="com.xworkz.fooditem.repository.FoodItemRepositoryImpl"
+		id="foodItemRepositoryImpl" scope="singleton"></bean>
+
+	<bean class="com.xworkz.fooditem.service.FoodItemServiceImpl"
+		id="foodItemServiceImpl" scope="singleton">
+		<constructor-args ref="foodItemRepositoryImpl"></constructor-args>
+	</bean>
+
+	<bean
+		class="com.xworkz.fooditem.repository.HotelVendorRepositoryImpl"
+		id="hotelVendorRepositoryImpl" scope="singleton">
+	</bean>
+	<bean class="com.xworkz.fooditem.service.HotelVendorServiceImpl"
+		id="hotelVendorServiceImpl" scope="singleton">
+		<constructor-args ref="hotelVendorRepositoryImpl"></constructor-args>
+	</bean>
+
+	<bean
+		class="com.xworkz.fooditem.repository.CustomerRepositoryImpl"
+		id="customerRepositoryImpl" scope="singleton"></bean>
+	<bean class="com.xworkz.fooditem.service.CustomerServiceImpl"
+		id="customerServiceImpl" scope="singleton">
+	<constructor-args ref="customerRepositoryImpl"></constructor-args>	
+	</bean>
+</beans>
