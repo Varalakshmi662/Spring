@@ -9,7 +9,7 @@ import com.xworkz.fooditem.service.CustomerServiceImpl;
 public class CustomerTester {
 
 	public static void main(String[] args) {
-		CustomerEntity entity=new CustomerEntity("Chethan", "Bangalore", 5, 997511222);
+		CustomerEntity entity=new CustomerEntity(1, "Chethan", "Bangalore", 5, 997511222);
 		CustomerRepository customerRepository=new CustomerRepositoryImpl();
 		CustomerService service=new CustomerServiceImpl(customerRepository);
 		service.validateAndSave(entity);

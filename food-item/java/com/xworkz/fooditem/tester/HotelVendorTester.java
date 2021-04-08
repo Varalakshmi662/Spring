@@ -10,7 +10,7 @@ import com.xworkz.fooditem.service.HotelVendorServiceImpl;
 public class HotelVendorTester {
 
 	public static void main(String[] args) {
-		HotelVendorEntity entity=new HotelVendorEntity("Mahesh", "Chintamani", 4.5f, HotelVendorType.RETAILER);
+		HotelVendorEntity entity=new HotelVendorEntity(1, "Mahesh", "Chintamani", 4.5f, HotelVendorType.RETAILER);
 		HotelVendorRepository repository=new HotelVendorRepositoryImpl();
 		HotelVendorService service=new HotelVendorServiceImpl(repository);
 		service.validateAndSave(entity);

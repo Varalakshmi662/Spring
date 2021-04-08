@@ -5,11 +5,38 @@
 	<groupId>com.xworkz</groupId>
 	<artifactId>fooddelivery</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<spring-version>5.3.5</spring-version>
+		<lombok-version>1.18.18</lombok-version>
+		<hibernate-version>5.4.28.Final</hibernate-version>
+		<mysql-version>8.0.23</mysql-version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>5.3.5</version>
+			<version>${spring-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate-version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok-version}</version>
 		</dependency>
 	</dependencies>
 	<build>
