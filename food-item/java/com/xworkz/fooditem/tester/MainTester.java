@@ -14,21 +14,17 @@ import com.xworkz.fooditem.service.HotelVendorService;
 public class MainTester {
 
 	public static void main(String[] args) {
-		ApplicationContext container=new ClassPathXmlApplicationContext("springconfig.xml");
-		FoodItemService foodItemService = container.getBean(FoodItemService.class);
-		FoodItemEntity entity=new FoodItemEntity(1,"Masala Dosa", 50, FoodType.SOUTHINDIAN, 01, 25);
-		foodItemService.saveAndValidate(entity);
+		ApplicationContext container=new ClassPathXmlApplicationContext("springconfig.xml","application.xml");
+//		HotelVendorEntity entity2=new HotelVendorEntity("Mahesh", "chintamani", 4, HotelVendorType.FOODMARKET);
+//		HotelVendorService hotelVendorService = container.getBean(HotelVendorService.class);
+//		hotelVendorService.validateAndSave(entity2);
+//		
+//		CustomerEntity entity1=new CustomerEntity("Chethan", "Bangalore", 5, 997511222);
+//		CustomerService service=container.getBean(CustomerService.class);
+//		service.validateAndSave(entity1);
 		
-		System.out.println("**************************************");
-		
-		CustomerEntity entity1=new CustomerEntity(1, "Chethan", "bangalore", 5, 875214521);
-		CustomerService customerService = container.getBean(CustomerService.class);
-		customerService.validateAndSave(entity1);
-		
-		System.out.println("***************************************");
-		
-		HotelVendorEntity entity2=new HotelVendorEntity(1, "Mahesh", "chintamani", 4, HotelVendorType.FOODMARKET);
-		HotelVendorService hotelVendorService = container.getBean(HotelVendorService.class);
-		hotelVendorService.validateAndSave(entity2);
-	}
+		FoodItemEntity entity=new FoodItemEntity("Pizza",80, FoodType.ITALIAN, 1, 0);
+		FoodItemService service2=container.getBean(FoodItemService.class);
+		service2.saveAndValidate(entity);
+}
 }

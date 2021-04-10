@@ -10,7 +10,7 @@ import com.xworkz.fooditem.service.FoodItemServiceImpl;
 public class FoodItemTester {
 
 	public static void main(String[] args) {
-		FoodItemEntity entity=new FoodItemEntity(1,"Fried Rice",8, FoodType.SOUTHINDIAN, 1, 25);
+		FoodItemEntity entity=new FoodItemEntity("Fried Rice",8, FoodType.SOUTHINDIAN, 1, 25);
 		FoodItemRepository repository=new FoodItemRepositoryImpl();
 		FoodItemService service=new FoodItemServiceImpl(repository);
 		service.saveAndValidate(entity);

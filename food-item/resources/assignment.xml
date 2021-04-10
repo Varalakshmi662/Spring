@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="Bussiness" table="bussiness_info">
+		<meta attribute="class-description"></meta>
+		<id name="id" type="int" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="name" column="NAME" type="string" />
+		<property name="noOfEmployees" column="NO_OF_EMPLOYEES"
+			type="int" />
+		<property name="investment" column="INVESTMENT" type="int" />
+		<property name="bussinessType" column="BUSSINESS_TYPE" type="string"/>
+	</class>
+
+</hibernate-mapping>

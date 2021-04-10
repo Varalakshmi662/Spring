@@ -14,8 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
-@Table(name="hotel_info")
+@Table(name = "hotel_info")
 public class HotelVendorEntity {
 
 	@Id
@@ -29,5 +28,13 @@ public class HotelVendorEntity {
 	private float rating;
 	@Column(name = "HOTEL_VENDOR_TYPE")
 	private HotelVendorType type;
+
+	public HotelVendorEntity(String name, String location, float rating, HotelVendorType type) {
+		super();
+		this.name = name;
+		this.location = location;
+		this.rating = rating;
+		this.type = type;
+	}
 
 }

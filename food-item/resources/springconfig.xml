@@ -9,7 +9,9 @@
 
 	<bean
 		class="com.xworkz.fooditem.repository.FoodItemRepositoryImpl"
-		id="foodItemRepositoryImpl" scope="singleton"></bean>
+		id="foodItemRepositoryImpl" scope="singleton">
+		<constructor-arg ref="localSessionFactoryBean"></constructor-arg>
+	</bean>
 
 	<bean class="com.xworkz.fooditem.service.FoodItemServiceImpl"
 		id="foodItemServiceImpl">
@@ -30,6 +32,6 @@
 		id="customerRepositoryImpl" scope="singleton"></bean>
 	<bean class="com.xworkz.fooditem.service.CustomerServiceImpl"
 		id="customerServiceImpl">
-	<constructor-arg ref="customerRepositoryImpl"></constructor-arg>	
+		<constructor-arg ref="customerRepositoryImpl"></constructor-arg>
 	</bean>
 </beans>

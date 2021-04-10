@@ -4,8 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,7 +11,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "customer_info")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class CustomerEntity {
 
 	@Id
@@ -27,5 +24,12 @@ public class CustomerEntity {
 	private float rating;
 	@Column(name = "PHONE_NO")
 	private long phoneNo;
-
+	
+	public CustomerEntity(String name, String location, float rating, long phoneNo) {
+		super();
+		this.name = name;
+		this.location = location;
+		this.rating = rating;
+		this.phoneNo = phoneNo;
+	}
 }
